@@ -8,6 +8,7 @@ By taking in user data on the _time, date and place_ to arrive, weather2meet wil
 
 ## 🎒 Technicalities
 Programming languages this project uses are:
+
 **Frontend**:
 * ReactJS
 * TailwindCSS
