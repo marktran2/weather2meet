@@ -3,6 +3,9 @@
 ### Project Idea
 Meeting with others is a hassle. Especially on a rainy day. Don't want to miss out on the perfect weather to meetup and have some fun? **weather2meet** is for you!
 
+### Proposed Solution
+By taking in user data on the _time, date and place_ to arrive, weather2meet will help assist on the weather forecast for insight into the weather ahead and whether the hangout will be ideal or not.
+
 ### Technicalities
 Programming languages this project uses are:
 **Frontend**:
