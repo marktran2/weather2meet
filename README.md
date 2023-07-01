@@ -1,6 +1,6 @@
 # weather2meet
 
-### 💡 Project Idea
+## 💡 Project Idea
 Meeting with others is a hassle. Especially on a rainy day. Don't want to miss out on the perfect weather to meetup and have some fun? **weather2meet** is for you!
 
 ## 🧩 Proposed Solution
