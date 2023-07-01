@@ -1,11 +1,9 @@
 import express, { json, Request, Response } from 'express';
-import { echo } from './echo';
 import morgan from 'morgan';
 import config from './config.json';
 import cors from 'cors';
 import errorHandler from 'middleware-http-errors';
-
-import './weather.js'
+import weatherGet from './weather';
 
 // Set up web app
 const app = express();
@@ -16,25 +14,19 @@ app.use(cors());
 // for logging errors (print to terminal)
 app.use(morgan('dev'));
 
-const PORT = parseInt(process.env.PORT || config.port);
-const HOST = process.env.IP || 'localhost';
+const PORT: number = parseInt(process.env.PORT || config.port);
+const HOST: string = process.env.IP || 'localhost';
 
 // Example get request
-app.get('/echo', (req, res) => {
-  const data = req.query.echo;
-  return res.json(echo(data));
-});
+// app.get('/echo', (req: Request, res: Response) => {
+//   const data = req.query.echo as string;
+//   return res.json(echo(data));
+// });
 
-app.post('/auth/login/v3', (req, res) => {
-  const { email, password } = req.body;
-  res.json(authLoginV3(email, password));
-});
-
-app.delete('/dm/remove/v2', (req, res) => {
-  const token = req.header('token');
-  const dmId = parseInt(req.query.dmId);
-  res.json(dmRemoveV2(token, dmId));
-});
+app.get('/forecast', (req: Request, res: Response) => {
+  const city = req.query.city as string;
+  res.json(weatherGet(city).then(data => { return data }));
+})
 
 // Keep this BENEATH route definitions
 // handles errors nicely
