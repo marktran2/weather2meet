@@ -23,9 +23,11 @@ const HOST: string = process.env.IP || 'localhost';
 //   return res.json(echo(data));
 // });
 
-app.get('/forecast', (req: Request, res: Response) => {
+app.get('/forecast', async (req: Request, res: Response) => {
   const city = req.query.city as string;
-  res.json(weatherGet(city).then(data => { return data }));
+
+  const data = await weatherGet(city);
+  res.json(data)
 })
 
 // Keep this BENEATH route definitions

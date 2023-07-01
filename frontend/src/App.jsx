@@ -2,21 +2,30 @@ import React, { useState } from 'react'
 import Navbar from './components/Navbar'
 import Form from './components/Form'
 import Info from './components/Info'
-import Compatibility from './components/Compatibility';
 
 function App() {
 
   const [displayInfo, setDisplayInfo] = useState(true);
+  const [submitToggle, setSubmitToggle] = useState(true);
+  const [queryStr, setQueryStr]= useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = (qry) => {
     setDisplayInfo(false);
+    setSubmitToggle(prev => !prev)
+    setQueryStr(qry)
+    console.log(qry)
   }
 
   return (
     <div className="">
       <Navbar/>
-      <Form handleSubmit={handleSubmit} />
-      {displayInfo ? <Info/> : <Compatibility />}
+      <Form 
+        handleSubmit={handleSubmit} 
+        toggle={submitToggle} 
+        queryStr={queryStr}
+        displayInfo={displayInfo}
+      />
+      {displayInfo && <Info/>}
     </div>
   )
 }
