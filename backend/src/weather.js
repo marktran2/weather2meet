@@ -1,4 +1,5 @@
 
+
 function weatherGet(array) {
 
 }
@@ -6,3 +7,5 @@ function weatherGet(array) {
 function timeGet() {
 
 }
+
+

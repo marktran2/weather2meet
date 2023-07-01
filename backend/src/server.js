@@ -1,25 +1,10 @@
-import express, { json, Request,  } from 'express';
+import express, { json, Request, Response } from 'express';
 import { echo } from './echo';
 import morgan from 'morgan';
 import config from './config.json';
 import cors from 'cors';
 import errorHandler from 'middleware-http-errors';
 
-import { authLoginV3, authRegisterV3, authLogoutV2, authPasswordResetRequestV1, authPasswordResetV1 } from './auth';
-import {
-  channelDetailsV3, channelJoinV3, channelInviteV3, channelMessagesV3,
-  channelAddOwnerV2, channelLeaveV2, channelRemoveOwnerV2
-} from './channel';
-import { channelsCreateV3, channelsListV3, channelsListAllV3 } from './channels';
-import { userProfileV3, userSetNameV2, userSetEmailV2, userSetHandleV2, userProfileUploadPhotoV1 } from './user';
-import { dmCreateV2, dmListV2, dmRemoveV2, dmDetailsV2, dmMessagesV2, dmLeaveV2 } from './dm';
-import { clearV1 } from './other';
-import { messageSendDmV2, messageSendV2, messageEditV2, messageRemoveV2, messageReactV1, messageUnreactV1, messagePinV1, messageUnpinV1, messageSendLaterV1, messageSendLaterDmV1, messageShareV1 } from './message';
-import { usersAllV2 } from './users';
-import { standupActive, standupSend, standupStart } from './standup';
-import { notificationsGetV1 } from './notifications';
-import { searchV1 } from './search';
-import { adminUserPermChangeV1, adminUserRemoveV1 } from './admin';
 import './weather.js'
 
 // Set up web app
@@ -36,7 +21,7 @@ const HOST = process.env.IP || 'localhost';
 
 // Example get request
 app.get('/echo', (req, res) => {
-  const data = req.query.echo as string;
+  const data = req.query.echo;
   return res.json(echo(data));
 });
 
@@ -47,7 +32,7 @@ app.post('/auth/login/v3', (req, res) => {
 
 app.delete('/dm/remove/v2', (req, res) => {
   const token = req.header('token');
-  const dmId = parseInt(req.query.dmId as string);
+  const dmId = parseInt(req.query.dmId);
   res.json(dmRemoveV2(token, dmId));
 });
 
