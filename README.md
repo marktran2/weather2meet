@@ -19,3 +19,15 @@ Programming languages this project uses are:
 
 ### Design Prototype
 * To access the design prototype of figma: [weather2meet design](https://www.figma.com/file/tkzpEBDZpzxwltTnFK7t23/2023-CSESoc-Hackathon?type=design&node-id=0%3A1&mode=design&t=ZlNZFlaEdEpc5Rfo-1)
+
+### Design Prototype
+* To access the design prototype of figma: [weather2meet design](https://www.figma.com/file/tkzpEBDZpzxwltTnFK7t23/2023-CSESoc-Hackathon?type=design&node-id=0%3A1&mode=design&t=ZlNZFlaEdEpc5Rfo-1)
+
+### Key contributers
+This project is for the 2023 CSESoc Hackathon and was worked on by:
+* Brendan Ta
+* Arkansh Maheshwari
+* Nelson You
+* Mark Tran
+
+
