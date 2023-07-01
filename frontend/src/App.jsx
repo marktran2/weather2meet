@@ -1,11 +1,15 @@
-import { useState } from 'react'
+import React from 'react'
+import Navbar from './components/Navbar'
+import Form from './components/Form'
+import Info from './components/Info'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className=" bg-slate-600 h-screen w-screen">
-      <p className="text-white">hey guys</p>
+    <div className="">
+      <Navbar/>
+      <Form />
+      <Info/>
     </div>
   )
 }
