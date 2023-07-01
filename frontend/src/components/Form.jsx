@@ -5,7 +5,8 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { renderTimeViewClock } from '@mui/x-date-pickers/timeViewRenderers';
 
-const Form = () => {
+const Form = (props) => {
+
   return (
     <div className="flex flex-col justify-center items-center rounded-lg pt-12">
       <form className="my-3">
@@ -13,7 +14,7 @@ const Form = () => {
           placeholder="Where to?"
           type="text"
           autoComplete="off"
-          className="w-80 p-5 border-[1px] border-solid border-black-200 outline-none"
+          className="w-80 p-5 border-[1px] border-solid border-black-200"
         ></input>
       </form>
       <div className="flex flex-row justify-around">
@@ -29,7 +30,10 @@ const Form = () => {
           />
         </LocalizationProvider>
       </div>
-      <button className="rounded-lg text-white bg-tan py-4 px-10 my-10">
+      <button 
+        className="rounded-lg text-white bg-tan py-4 px-10 my-10"
+        onClick={props.handleSubmit}
+      >
         Rate compatibility
       </button>
       
